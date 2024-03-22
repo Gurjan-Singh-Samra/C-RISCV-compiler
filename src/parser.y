@@ -17,7 +17,7 @@
 // Represents the value associated with any kind of AST node.
 %union{
   NodePtr 		Node;
-  NodeList      *nodes;
+  //NodeList      *nodes;
   int 			number_int;
   double 		number_float;
   std::string 	*string;
@@ -64,7 +64,7 @@ ROOT
 
 translation_unit
 	: external_declaration { $$ = $1; }
-	| translation_unit external_declaration { $$ = new  Function_Definition($1, $2, $2.branchList[1]);}
+	| translation_unit external_declaration { $$ = new  MultiFunction($1, $2);}
 	;
 external_declaration
 	: function_definition { $$ = $1; }
