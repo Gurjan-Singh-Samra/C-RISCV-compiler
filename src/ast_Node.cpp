@@ -6,7 +6,7 @@ Node::Node(std::vector<NodePtr> _branchList) //this is a case where you do [new 
 
 Node::Node() //this is a case where Node() is called with no parameters
   : Node(std::vector<NodePtr>{}) // you refer to the constructor above
-  //carrying out "constructor delegation" where you reuse a constructor 
+  //carrying out "constructor delegation" where you reuse a constructor
 {}
 
 
@@ -76,3 +76,4 @@ std::string Node::returnOp() const{
     std::cerr << "Node Class Reached. ERROR!!! (returnOp)" << std::endl;
     return "";
 }
+
